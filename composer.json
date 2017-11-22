@@ -1,0 +1,22 @@
+{
+    "name": "msztorc/svg-convert",
+    "description": "Various helpers to convert SVG files to other formats including PNG & PDF.",
+    "license": "MIT",
+    "keywords": ["svg", "svgtopng", "svgtopdf", "svg-convert", "phantomjs-svg", "rsvg", "svg2png", "svg2pdf"],
+    "authors": [
+        {
+            "name": "Miroslaw Sztorc",
+            "email": "mirek.sztorc@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "SVG\\": "src/php/"
+        }
+    }
+}
