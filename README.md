@@ -32,7 +32,7 @@ Next, create a symlink of PhantomJS binary file to systems bin directory:
 ### Use psvg-convert script globally
 ```bash
 chmod +x src/js/psvg-convert.js
-sudo cp src/js/psvg-convert.js /usr/bin/psvg-convert
+sudo cp src/js/psvg-convert.js /usr/local/bin/psvg-convert
 ```
 
 ## Install RSVG (only if you want to convert svg using librsvg)
