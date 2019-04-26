@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/msztorc/svg-convert.svg?branch=master)](https://travis-ci.org/msztorc/svg-convert)
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://www.opensource.org/licenses/MIT)
+
+
 ![svg-convert](https://sztorc.com/svg-convert/svg-convert.png)
 
 # svg-convert
