@@ -6,7 +6,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 
 	public function testOpenFileWithDefaultConstructor()
 	{
-		$svg = SVG::init('rsvg');
+		$svg = (new SVG)->init('rsvg');
 		$svg->open(dirname(__FILE__) . '/gfx/car.svg');
 		$this->assertNotEmpty($svg->getOutputStream());
 
@@ -17,7 +17,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 		$file = dirname(__FILE__) . '/gfx/car.svg';
 		$ofile = dirname(__FILE__) . '/gfx/rcar.png';
 
-		$svg = SVG::init('rsvg', $file)->setFormat('png')->convert()->save($ofile);
+		$svg = (new SVG)->init('rsvg', $file)->setFormat('png')->convert()->save($ofile);
 
 		$this->assertTrue(file_exists($ofile) && filesize($ofile) > 0);
 
@@ -28,7 +28,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 		$file = dirname(__FILE__) . '/gfx/gallardo.svg';
 		$ofile = dirname(__FILE__) . '/gfx/rgallardo.png';
 
-		$svg = SVG::init('rsvg', $file)->setFormat('png')->convert()->save($ofile);
+		$svg = (new SVG)->init('rsvg', $file)->setFormat('png')->convert()->save($ofile);
 
 		$this->assertTrue(file_exists($ofile) && filesize($ofile) > 0);
 
@@ -39,7 +39,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 		$file = dirname(__FILE__) . '/gfx/tiger.svg';
 		$ofile = dirname(__FILE__) . '/gfx/rtiger.png';
 
-		$svg = SVG::init('rsvg', $file)->setFormat('png')->convert()->save($ofile);
+		$svg = (new SVG)->init('rsvg', $file)->setFormat('png')->convert()->save($ofile);
 
 		$this->assertTrue(file_exists($ofile) && filesize($ofile) > 0);
 
@@ -53,7 +53,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 		$width = 420;
 		$height = 420;
 
-		$svg = SVG::init('rsvg', $file)
+		$svg = (new SVG)->init('rsvg', $file)
 			->setFormat('png')
 			->setWidth($width)
 			->setHeight($height)
@@ -74,7 +74,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 		$width = 420;
 		$height = 420;
 
-		$svg = SVG::init('rsvg', $file)
+		$svg = (new SVG)->init('rsvg', $file)
 			->setFormat('png')
 			->setWidth($width)
 			->setHeight($height)
@@ -97,7 +97,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 
 
 		//debian
-		$svg2 = SVG::init('rsvg', $debian);
+		$svg2 = (new SVG)->init('rsvg', $debian);
 		$svg2->setAttribute('path', 'fill', '#131C77')->setFormat('png')->convert()->save($odebian1);
 		$svg2->setAttribute('path', 'fill', '#06A70D')->setFormat('png')->convert()->save($odebian2);
 
@@ -114,7 +114,7 @@ class RSVGTest extends PHPUnit_Framework_TestCase {
 		//ubuntu
 		for ($i=1;$i<4;$i++)
 		{
-			$svg = SVG::init('rsvg', $ubuntu);
+			$svg = (new SVG)->init('rsvg', $ubuntu);
 
 			if ($i == 2)
 			{

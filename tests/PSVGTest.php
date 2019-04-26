@@ -6,7 +6,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
 
     public function testOpenFileWithDefaultConstructor()
     {
-        $svg = SVG::init();
+        $svg = (new SVG)->init();
         $svg->open(dirname(__FILE__) . '/gfx/car.svg');
         $this->assertNotEmpty($svg->getOutputStream());
 
@@ -17,7 +17,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
         $file = dirname(__FILE__) . '/gfx/car.svg';
         $ofile = dirname(__FILE__) . '/gfx/pcar.png';
 
-        $svg = SVG::init('phantomjs', $file)->setFormat('png')->convert()->save($ofile);
+        $svg = (new SVG)->init('phantomjs', $file)->setFormat('png')->convert()->save($ofile);
 
         $this->assertTrue(file_exists($ofile) && filesize($ofile) > 0);
 
@@ -28,7 +28,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
 		$file = dirname(__FILE__) . '/gfx/gallardo.svg';
 		$ofile = dirname(__FILE__) . '/gfx/pgallardo.png';
 
-		$svg = SVG::init('phantomjs', $file)->setFormat('png')->convert()->save($ofile);
+		$svg = (new SVG)->init('phantomjs', $file)->setFormat('png')->convert()->save($ofile);
 
 		$this->assertTrue(file_exists($ofile) && filesize($ofile) > 0);
 
@@ -39,7 +39,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
 		$file = dirname(__FILE__) . '/gfx/tiger.svg';
 		$ofile = dirname(__FILE__) . '/gfx/ptiger.png';
 
-		$svg = SVG::init('phantomjs', $file)->setFormat('png')->convert()->save($ofile);
+		$svg = (new SVG)->init('phantomjs', $file)->setFormat('png')->convert()->save($ofile);
 
 		$this->assertTrue(file_exists($ofile) && filesize($ofile) > 0);
 
@@ -53,7 +53,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
 		$width = 420;
 		$height = 420;
 
-		$svg = SVG::init('phantomjs', $file)
+		$svg = (new SVG)->init('phantomjs', $file)
 				->setFormat('png')
 				->setWidth($width)
 				->setHeight($height)
@@ -74,7 +74,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
 		$width = 420;
 		$height = 420;
 
-		$svg = SVG::init('phantomjs', $file)
+		$svg = (new SVG)->init('phantomjs', $file)
 				->setFormat('png')
 				->setWidth($width)
 				->setHeight($height)
@@ -96,7 +96,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
         $odebian2 = dirname(__FILE__) . '/gfx/pdebian-green.png';
 
         //debian
-        $svg2 = SVG::init('phantomjs', $debian);
+        $svg2 = (new SVG)->init('phantomjs', $debian);
         $svg2->setAttribute('path', 'fill', '#131C77')->setFormat('png')->convert()->save($odebian1);
         $svg2->setAttribute('path', 'fill', '#06A70D')->setFormat('png')->convert()->save($odebian2);
 
@@ -113,7 +113,7 @@ class PSVGTest extends PHPUnit_Framework_TestCase {
 		//ubuntu
 		for ($i=1;$i<4;$i++)
 		{
-			$svg = SVG::init('phantomjs', $ubuntu);
+			$svg = (new SVG)->init('phantomjs', $ubuntu);
 
 			if ($i == 2)
 			{

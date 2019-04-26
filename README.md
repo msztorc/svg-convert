@@ -58,18 +58,18 @@ sudo cp src/js/psvg-convert.js /usr/bin/psvg-convert
 
 Initializing method with `phantomjs` argument when you want use to PhantomJS engine
 ```php
-$svg = SVG::init('phantomjs');
+$svg = (new SVG)->init('phantomjs');
 ```
 
 or if you want to use rsvg-convert
 ```php
-$svg = SVG::init('rsvg');
+$svg = (new SVG)->init('rsvg');
 ```
 
 ```php
 <?php
 
-    $svg = SVG::init('phantomjs', 'inputfile.svg');
+    $svg = (new SVG)->init('phantomjs', 'inputfile.svg');
     $svg->setFormat('png');
     $svg->convert();
     $svg->save('outputfile.png');
@@ -80,7 +80,7 @@ $svg = SVG::init('rsvg');
 ```php
 <?php
 
-    $svg = SVG::init('phantomjs', 'inputfile.svg');
+    $svg = (new SVG)->init('phantomjs', 'inputfile.svg');
     $svg->setAttribute('path', 'fill', '#131C77'); //change fill color to all paths
     $svg->setFormat('png');
     $svg->convert();
@@ -146,16 +146,16 @@ All images you can find in unit tests folder.
 
 <img src="https://sztorc.com/svg-convert/images/pdebian.png" width="100"> <img src="https://sztorc.com/svg-convert/images/pdebian-blue.png" width="100"> <img src="https://sztorc.com/svg-convert/images/pdebian-green.png" width="100">
 ```
-    $svg = SVG::init('phantomjs', 'debian.svg');
+    $svg = (new SVG)->init('phantomjs', 'debian.svg');
     $svg->setAttribute('path', 'fill', '#131C77')->setFormat('png')->convert()->save('debian-blue.png');
     $svg->setAttribute('path', 'fill', '#06A70D')->setFormat('png')->convert()->save('debian-green.png');
 ``` 
 
 <img src="https://sztorc.com/svg-convert/images/pubuntu1.png" width="100"> <img src="https://sztorc.com/svg-convert/images/pubuntu2.png" width="100"> <img src="https://sztorc.com/svg-convert/images/pubuntu3.png" width="100"> <img src="https://sztorc.com/svg-convert/images/ubuntu.gif" width="100">
 ```
-$svg1 = SVG::init('phantomjs', 'ubuntu.svg')->setFormat('png')->convert()->save('ubuntu1.png');
+$svg1 = (new SVG)->init('phantomjs', 'ubuntu.svg')->setFormat('png')->convert()->save('ubuntu1.png');
 
-$svg2 = SVG::init('phantomjs', 'ubuntu.svg')
+$svg2 = (new SVG)->init('phantomjs', 'ubuntu.svg')
     ->setAttribute('use[1]', 'fill', '#f40')
     ->setAttribute('use[2]', 'fill', '#f80')
     ->setAttribute('use[3]', 'fill', '#d00')
@@ -164,7 +164,7 @@ $svg2 = SVG::init('phantomjs', 'ubuntu.svg')
     ->setAttribute('use[6]', 'fill', '#d00')
     ->setFormat('png')->convert()->save('ubuntu2.png');
 
-$svg3 = SVG::init('phantomjs', 'ubuntu.svg')
+$svg3 = (new SVG)->init('phantomjs', 'ubuntu.svg')
     ->setAttribute('use[1]', 'fill', '#f80')
     ->setAttribute('use[2]', 'fill', '#d00')
     ->setAttribute('use[3]', 'fill', '#f40')
