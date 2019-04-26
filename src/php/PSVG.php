@@ -18,7 +18,7 @@ class PSVG extends SVGManipulator implements SVGInterface
      * Path to PhantomJS
      * @var string
      */
-    private $CLI = '/usr/bin/phantomjs';
+    private $CLI = '/usr/local/bin/phantomjs';
 
 
     /**

@@ -18,7 +18,7 @@ class RSVG extends SVGManipulator implements SVGInterface
      * Path to rsvg-convert tool
      * @var string
      */
-    private $CLI = '/usr/bin/rsvg-convert';
+    private $CLI = '/usr/local/bin/rsvg-convert';
 
    /**
      * Pixels per inch [defaults to 90dpi]
