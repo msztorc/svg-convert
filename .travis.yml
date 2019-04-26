@@ -9,10 +9,10 @@ php:
 
 before_script:
   - composer self-update
-  - install.sh
 
 install:
   - composer install
 
 script:
+  - bash install.sh
   - vendor/bin/phpunit
